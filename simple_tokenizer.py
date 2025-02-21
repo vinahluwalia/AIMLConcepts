@@ -1,6 +1,5 @@
 from collections import defaultdict
 import re
-import simple_tokenizer
 
 class SimpleTokenizer:
     def __init__(self, num_words=None):
