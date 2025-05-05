@@ -125,6 +125,9 @@ class PositionalEncoding(nn.Module):
 
         # Ensure pe is not a learnable parameter
         self.pe = self.register_buffer('pe', pe.unsqueeze(0)) # Register buffer so it's not considered a model parameter
+    
+    def forward(x):
+        return x + self.pe[:, :x.size(1)] # Add positional encoding to the token embeddings
 
 
 
